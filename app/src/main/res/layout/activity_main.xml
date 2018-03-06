@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:a="http://schemas.android.com/apk/res/com.component.circleshape"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ResAuto">
+
+    <com.component.circleshape.CircleShape
+        android:id="@+id/circle_shape"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:layout_gravity="center"
+        a:pr_progress_width="30dp" />
+
+</FrameLayout>
