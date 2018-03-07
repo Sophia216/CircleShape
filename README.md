@@ -18,7 +18,8 @@ drawArc：
 ![](https://git.xiaojukeji.com/tanlinsophia/CircleShape/raw/master/app/screenshots/drawArc.jpg)
 
 ## 实现
-onMeasure设定画大小
+（1）onMeasure设定画大小
+
 `    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         mMeasureWidth = getMeasuredWidth();
@@ -32,7 +33,8 @@ onMeasure设定画大小
         }
     }`
 
-onDraw确定怎么画，这里主要看一下drawProgress
+（2）onDraw确定怎么画，这里主要看一下drawProgress
+
 `    private void drawProgress(Canvas canvas) {
         for (int i = 0, end = (int) (curProgress * unitAngle); i < end; i++) {
             progressPaint.setColor(getGradient(i / (float) end, progressStartColor, progressEndColor));
@@ -44,7 +46,8 @@ onDraw确定怎么画，这里主要看一下drawProgress
         }
     }`
     
-获取过渡色的方法
+（3）获取过渡色的方法
+
 `    public int getGradient(float fraction, int startColor, int endColor) {
         if (fraction > 1) fraction = 1;
         int alphaStart = Color.alpha(startColor);
@@ -77,8 +80,12 @@ Paint.Cap.BUTT 头尾不多出笔帽，但是每个小圆环中间有空隙
 解决方案：
 sweepAngle比下一次的startAngle多一点。
 
+（4）后续拓展
+通过showAnim来控制圆环动效
+
 ## 使用
 1、在layout中设置width、height、画笔宽度
+
 `    <com.component.circleshape.CircleShape
         android:id="@+id/circle_shape"
         android:layout_width="320dp"
@@ -87,6 +94,7 @@ sweepAngle比下一次的startAngle多一点。
         a:pr_progress_width="30dp" />`
 
 2、在类中设置progress、背景色、进度起始色、进度终止色
+
 `        CircleShape mPR = findViewById(R.id.circle_shape);
         mPR.setProgress(60);
         mPR.setColor(R.color.bgColor, R.color.progressStartColor, R.color.progressEndColor);`
