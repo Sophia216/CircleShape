@@ -14,10 +14,10 @@
 
 #### 3、画图
 RectF：RectF有四个参数(float left, float top, float right, float bottom)
-![](https://github.com/Sophia216/CircleShape/blob/master/app/screenshots/Rect.jpg)
+![](app/screenshots/Rect.jpg)
 
 drawArc：画弧，主要关注startAngle、sweepAngle两个参数
-![](https://github.com/Sophia216/CircleShape/blob/master/app/screenshots/drawArc.jpg)
+![](app/screenshots/drawArc.jpg)
 
 ## 实现
 （1）onMeasure设定画大小
@@ -84,13 +84,13 @@ public int getGradient(float fraction, int startColor, int endColor) {
 Paint.Cap.ROUND 头尾多出了一块圆形笔帽
 ![](app/screenshots/StrokeCap_Round.png)
 Paint.Cap.SQUARE 头尾多出了一块方形笔帽
-![](https://github.com/Sophia216/CircleShape/blob/master/app/screenshots/StrokeCap_SQUARE.png)
+![](app/screenshots/StrokeCap_SQUARE.png)
 Paint.Cap.BUTT 头尾不多出笔帽，但是每个小圆环中间有空隙
-![](https://git.xiaojukeji.com/tanlinsophia/CircleShape/raw/master/app/screenshots/StrokeCap_BUTT.png)
+![](app/screenshots/StrokeCap_BUTT.png)
 
 解决方案：
 sweepAngle比下一次的startAngle多一点。
-![](https://git.xiaojukeji.com/tanlinsophia/CircleShape/raw/master/app/screenshots/StrokeCap_NORMAL.png)
+![](app/screenshots/StrokeCap_NORMAL.png)
 
 （5）后续拓展
 通过showAnim来控制圆环动效
