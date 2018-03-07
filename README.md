@@ -14,10 +14,10 @@
 
 #### 3、画图
 RectF：RectF有四个参数(float left, float top, float right, float bottom)
-![](https://git.xiaojukeji.com/tanlinsophia/CircleShape/raw/master/app/screenshots/Rect.jpg)
+![](https://github.com/Sophia216/CircleShape/blob/master/app/screenshots/Rect.jpg)
 
 drawArc：画弧，主要关注startAngle、sweepAngle两个参数
-![](https://git.xiaojukeji.com/tanlinsophia/CircleShape/raw/master/app/screenshots/drawArc.jpg)
+![](https://github.com/Sophia216/CircleShape/blob/master/app/screenshots/drawArc.jpg)
 
 ## 实现
 （1）onMeasure设定画大小
@@ -82,9 +82,9 @@ public int getGradient(float fraction, int startColor, int endColor) {
 画圆环的过程中会遇到一个问题，上面提到的笔刷样式的选择，下面是三种笔刷的示意图：
 
 Paint.Cap.ROUND 头尾多出了一块圆形笔帽
-![](https://git.xiaojukeji.com/tanlinsophia/CircleShape/raw/master/app/screenshots/StrokeCap_Round.png)
+![](app/screenshots/StrokeCap_Round.png)
 Paint.Cap.SQUARE 头尾多出了一块方形笔帽
-![](https://git.xiaojukeji.com/tanlinsophia/CircleShape/raw/master/app/screenshots/StrokeCap_SQUARE.png)
+![](https://github.com/Sophia216/CircleShape/blob/master/app/screenshots/StrokeCap_SQUARE.png)
 Paint.Cap.BUTT 头尾不多出笔帽，但是每个小圆环中间有空隙
 ![](https://git.xiaojukeji.com/tanlinsophia/CircleShape/raw/master/app/screenshots/StrokeCap_BUTT.png)
 
