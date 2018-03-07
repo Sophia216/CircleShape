@@ -14,6 +14,7 @@
 
 #### 3、画图
 RectF：RectF有四个参数(float left, float top, float right, float bottom)
+
 <img src="app/screenshots/Rect.jpg" width="50%" height="50%" />
 
 drawArc：画弧，主要关注startAngle、sweepAngle两个参数
