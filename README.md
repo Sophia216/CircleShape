@@ -14,10 +14,10 @@
 
 #### 3、画图
 RectF：RectF有四个参数(float left, float top, float right, float bottom)
-![](app/screenshots/Rect.jpg)
+<img src="app/screenshots/Rect.jpg" width="50%" height="50%" />
 
 drawArc：画弧，主要关注startAngle、sweepAngle两个参数
-![](app/screenshots/drawArc.jpg)
+<img src="app/screenshots/drawArc.jpg" width="50%" height="50%" />
 
 ## 实现
 （1）onMeasure设定画大小
@@ -82,15 +82,15 @@ public int getGradient(float fraction, int startColor, int endColor) {
 画圆环的过程中会遇到一个问题，上面提到的笔刷样式的选择，下面是三种笔刷的示意图：
 
 Paint.Cap.ROUND 头尾多出了一块圆形笔帽
-![](app/screenshots/StrokeCap_Round.png)
+<img src="app/screenshots/StrokeCap_Round.png" width="50%" height="50%" />
 Paint.Cap.SQUARE 头尾多出了一块方形笔帽
-![](app/screenshots/StrokeCap_SQUARE.png)
+<img src="app/screenshots/StrokeCap_SQUARE.png" width="50%" height="50%" />
 Paint.Cap.BUTT 头尾不多出笔帽，但是每个小圆环中间有空隙
-![](app/screenshots/StrokeCap_BUTT.png)
+<img src="app/screenshots/StrokeCap_BUTT.png" width="50%" height="50%" />
 
 解决方案：
 sweepAngle比下一次的startAngle多一点。
-![](app/screenshots/StrokeCap_NORMAL.png)
+<img src="app/screenshots/StrokeCap_NORMAL.png" width="50%" height="50%" />
 
 （5）后续拓展
 通过showAnim来控制圆环动效
