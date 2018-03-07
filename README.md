@@ -37,7 +37,7 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
     }
  ```
 
-（2）onDraw确定怎么画，这里主要看一下drawProgress
+（2）onDraw确定怎么画，这里主要看一下drawProgress，整个圆弧由多个小圆弧组成，通过获取过渡色设置笔刷颜色，笔刷颜色从起始色值开始，每增加一度都向终止色值渐变
 
 ```    
 private void drawProgress(Canvas canvas) {
@@ -80,6 +80,7 @@ public int getGradient(float fraction, int startColor, int endColor) {
 （4）问题解决  
 
 画圆环的过程中会遇到一个问题，上面提到的笔刷样式的选择，下面是三种笔刷的示意图：
+
 Paint.Cap.ROUND 头尾多出了一块圆形笔帽
 ![](https://git.xiaojukeji.com/tanlinsophia/CircleShape/raw/master/app/screenshots/StrokeCap_Round.png)
 Paint.Cap.SQUARE 头尾多出了一块方形笔帽
@@ -89,6 +90,7 @@ Paint.Cap.BUTT 头尾不多出笔帽，但是每个小圆环中间有空隙
 
 解决方案：
 sweepAngle比下一次的startAngle多一点。
+![](https://git.xiaojukeji.com/tanlinsophia/CircleShape/raw/master/app/screenshots/StrokeCap_NORMAL.png)
 
 （5）后续拓展
 通过showAnim来控制圆环动效
