@@ -13,10 +13,10 @@
 画笔宽度（setStrokeWidth）
 
 #### 3、画图
-RectF：
+RectF：RectF有四个参数(float left, float top, float right, float bottom)
 ![](https://git.xiaojukeji.com/tanlinsophia/CircleShape/raw/master/app/screenshots/Rect.jpg)
 
-drawArc：
+drawArc：画弧，主要关注startAngle、sweepAngle两个参数
 ![](https://git.xiaojukeji.com/tanlinsophia/CircleShape/raw/master/app/screenshots/drawArc.jpg)
 
 ## 实现
@@ -76,7 +76,9 @@ public int getGradient(float fraction, int startColor, int endColor) {
      return Color.argb(alphaCurrent, redCurrent, greenCurrent, blueCurrent);
     }
  ```
-    
+
+（4）问题解决  
+
 画圆环的过程中会遇到一个问题，上面提到的笔刷样式的选择，下面是三种笔刷的示意图：
 Paint.Cap.ROUND 头尾多出了一块圆形笔帽
 ![](https://git.xiaojukeji.com/tanlinsophia/CircleShape/raw/master/app/screenshots/StrokeCap_Round.png)
@@ -88,7 +90,7 @@ Paint.Cap.BUTT 头尾不多出笔帽，但是每个小圆环中间有空隙
 解决方案：
 sweepAngle比下一次的startAngle多一点。
 
-（4）后续拓展
+（5）后续拓展
 通过showAnim来控制圆环动效
 
 ## 使用
