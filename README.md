@@ -1,16 +1,18 @@
-#CircleShape渐变颜色圆环
+# CircleShape渐变颜色圆环
 ## 设计思路
 通过自定义控件实现。将整个圆环拆分成一个个的小圆弧，每个小圆弧画笔的色值不一样，每个圆弧画笔的色值都是起始色值和终止色值的中间过渡色，由起始色值逐渐向终止色值靠拢，最后形成渐变颜色的圆环。
 ## 知识点
-1、自定义控件
-自定义控件大致分为三种：继承控件，即在现有控件直接简单修改；组合控件，即GroupView；自定义View。具体自定义控件的细节，这里不再细说，可以参阅网上资料。
+#### 1、自定义控件
+自定义控件分为三种：继承控件，即在现有控件直接简单修改；组合控件，即GroupView；自定义View。具体自定义控件的细节，这里不再细说，可以参阅网上资料。
 
-2、画笔
+#### 2、画笔
 画笔类型（setStyle）分为三种：STROKE只绘制图形轮廓，FILL只绘制图形内容，FILL_AND_STROKE既绘制轮廓也绘制内容；我们采用的是STROKE，也就是描边。
+
 笔刷样式（setStrokeCap）分为三种：Round圆形冒；SQUARE方形冒；BUTT无冒。这里需要注意，冒的意思就是多出一部分，所以我们采用的是BUTT，下面会详细说明。
+
 画笔宽度（setStrokeWidth）
 
-3、画图
+#### 3、画图
 RectF：
 ![](https://git.xiaojukeji.com/tanlinsophia/CircleShape/raw/master/app/screenshots/Rect.jpg)
 
@@ -86,15 +88,20 @@ sweepAngle比下一次的startAngle多一点。
 ## 使用
 1、在layout中设置width、height、画笔宽度
 
-`    <com.component.circleshape.CircleShape
+  
+```
+<com.component.circleshape.CircleShape
         android:id="@+id/circle_shape"
         android:layout_width="320dp"
         android:layout_height="320dp"
         android:layout_gravity="center"
-        a:pr_progress_width="30dp" />`
+        a:pr_progress_width="30dp" />
+```
 
 2、在类中设置progress、背景色、进度起始色、进度终止色
 
-`        CircleShape mPR = findViewById(R.id.circle_shape);
-        mPR.setProgress(60);
-        mPR.setColor(R.color.bgColor, R.color.progressStartColor, R.color.progressEndColor);`
+```        
+CircleShape mPR = findViewById(R.id.circle_shape);
+mPR.setProgress(60);
+mPR.setColor(R.color.bgColor,R.color.progressStartColor, R.color.progressEndColor);
+```
